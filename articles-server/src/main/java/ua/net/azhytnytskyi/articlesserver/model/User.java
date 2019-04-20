@@ -27,4 +27,42 @@ public class User {
     @Column(name = "password", nullable = false, length = 60)
     private String userPassword;
 
+    public User() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Set<Article> getUserArticles() {
+        return userArticles;
+    }
+
+    public void setUserArticles(Set<Article> userArticles) {
+        this.userArticles = userArticles;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
 }
