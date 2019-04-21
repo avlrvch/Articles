@@ -9,13 +9,19 @@ angular.module('myApp.login', ['ngRoute'])
         });
     }])
 
-    .controller('LoginController', ['$scope','$rootScope','$http', function($scope, $rootScope, $http) {
+    .controller('LoginController', ['$scope','$rootScope','$http','$location', function($scope, $rootScope, $http, $location) {
 
         $scope.login = function () {
-            $http.post('http://localhost:8080/test', "adasd").then(function (value) {
-               console.log(value);
+            $http.post('http://localhost:8080/login', {"userName" : $scope.username, "password" : $scope.password})
+                .then(function (response) {
+
+                var isLoggedIn = response.data.succeed;
+
+                if (isLoggedIn){
+                    $rootScope.isLoggedIn = isLoggedIn;
+                    $location.path("/articles");
+                }
             });
-            $rootScope.isLoggedIn = true;
         };
 
     }]);
