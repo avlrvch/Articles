@@ -20,6 +20,7 @@ HELP.md
 logs/*
 !.gitkeep
 node_modules/
-app/lib/
+lib/
 tmp
+package-lock.json
 .DS_Store
