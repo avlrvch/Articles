@@ -21,11 +21,13 @@ public class LoginController {
         for (User user : userService.getUsers()){
             if (user.getUserName().equals(userDto.getUserName())
                     && user.getUserPassword().equals(userDto.getPassword())){
-
                 responseDto.setEntity(userService.getUserById(user.getId()));
                 responseDto.setSucceed(true);
+            } else {
+                responseDto.setMessage("Incorrest username or password");
             }
         }
+
         return responseDto;
     }
 }
