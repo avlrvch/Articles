@@ -20,6 +20,9 @@ angular.module('myApp.login', ['ngRoute'])
                 if (isLoggedIn){
                     $rootScope.isLoggedIn = isLoggedIn;
                     $location.path("/articles");
+                } else{
+                    $scope.errorMessage = response.data.message;
+                    console.log($scope.errorMessage)
                 }
             });
         };

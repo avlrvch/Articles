@@ -1,6 +1,7 @@
 <div class="loginForm">
     <h2>Login</h2>
     <form name="form" ng-submit="login()" role="form">
+        <p class="errorMessage" ng-show="errorMessage">{{errorMessage}}</p>
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" class="form-control" ng-model="username" required/>
